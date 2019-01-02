@@ -1,7 +1,7 @@
 import * as vscode from 'vscode'
 import { getFormatDate } from './date'
 
-export const createJSDoc = () => {
+export const genJSDoc = () => {
   const editor = vscode.window.activeTextEditor
   if (!editor) {
     return

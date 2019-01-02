@@ -3,7 +3,7 @@
 	"name": "jsdoc",
 	"displayName": "jsdoc",
 	"description": "gen jsdoc template",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"engines": {
 		"vscode": "^1.30.0"
 	},
@@ -11,14 +11,14 @@
 		"Extension Packs"
 	],
 	"activationEvents": [
-		"onCommand:extension.createJSDoc"
+		"onCommand:extension.genJSDoc"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.createJSDoc",
-				"title": "根据选中函数的参数生成一个 jsdoc 风格的注释模板"
+				"command": "extension.genJSDoc",
+				"title": "gen jsdoc"
 			}
 		],
 		"configuration": [

@@ -1,10 +1,10 @@
 import * as vscode from 'vscode'
-import { createJSDoc } from './main'
+import { genJSDoc } from './main'
 
 export function activate(context: vscode.ExtensionContext) {
   let disposable = vscode.commands.registerCommand(
-    'extension.createJSDoc',
-    createJSDoc
+    'extension.genJSDoc',
+    genJSDoc
   )
 
   context.subscriptions.push(disposable)

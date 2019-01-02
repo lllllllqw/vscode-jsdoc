@@ -4,7 +4,7 @@ gen jsdoc
 
 ## Features
 
-选中一个函数的参数, `ctrl+shift+p` 后输入 `createJSDoc` 并选择 `extension.createJSDoc` 命令, 即可生成 jsdoc 风格的函数注释
+选中一个函数的参数, `ctrl+shift+p` 后输入 `gen jsdoc` 并选择 `gen jsdoc` 命令, 即可生成 jsdoc 风格的函数注释
 
 ## Requirements
 
