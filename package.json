@@ -4,6 +4,10 @@
 	"displayName": "jsdoc",
 	"description": "gen jsdoc template",
 	"version": "1.0.1",
+	"repository": {
+		"url": "https://github.com/lllllllqw/vscode-jsdoc.git",
+		"type": "git"
+	},
 	"engines": {
 		"vscode": "^1.30.0"
 	},
