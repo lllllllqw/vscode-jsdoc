@@ -29,7 +29,7 @@ export function getFormatDate (rule = 'YYYY-MM-DD hh:mm:ss', date: number | stri
     func: 'getSeconds',
   }]
   
-  const dateAsAny = date as any
+  const dateAsAny: any = date
   _regList.forEach(o => {
     const { reg, func } = o
     if (reg.test(rule)) {

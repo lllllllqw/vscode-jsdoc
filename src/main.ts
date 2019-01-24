@@ -7,6 +7,7 @@ export const genJSDoc = () => {
     return
   }
 
+
   // 获取 selection 对象(其中包含当前选择的行与字符)
   const selection = editor.selection
   // 获取选中的内容
@@ -21,10 +22,9 @@ export const genJSDoc = () => {
 
   editor.edit(editBuilder => {
     // 取上一行的末尾作为插入点
-    const prevLine = editor.document.lineAt(selection.start.line - 1)
-    const insertPosition = prevLine.range.end
-    let text = `\r`
-    text += `/**\r`
+    const selectionLine = editor.document.lineAt(selection.start.line)
+    const insertPosition = selectionLine.range.start
+    let text = '/**\r'
     text += `* 描述\r`
     // 作者
     const configuration = vscode.workspace.getConfiguration('jsdoc');
@@ -38,12 +38,14 @@ export const genJSDoc = () => {
       .join('')
     // 返回值
     text += `* @returns {any}\r`
-    text += `*/`
+    text += `*/\r`
 
     // 填充行头的空格
-    const whitespace = editor.document.lineAt(selection.start.line).firstNonWhitespaceCharacterIndex
-    const padSpaceStr = Array.from({length: whitespace}, () => ' ').join('')
-    text = text.replace(/\r/g, `\r${padSpaceStr}`)
+    const whitespace = selectionLine.firstNonWhitespaceCharacterIndex
+    const padSpaceStr = ' '.repeat(whitespace)
+    text = text.replace(/\r/g, `\r${padSpaceStr} `)
+    text = `${padSpaceStr}${text}`
+    text = text.slice(0, text.length - whitespace - 1)
 
     // 插入注释
     editBuilder.insert(insertPosition, text)
