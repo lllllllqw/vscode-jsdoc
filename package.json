@@ -2,8 +2,8 @@
 	"publisher": "lllllllqw",
 	"name": "jsdoc",
 	"displayName": "jsdoc",
-	"description": "gen jsdoc template",
-	"version": "1.0.3",
+	"description": "%jsdoc.description%",
+	"version": "1.0.5",
 	"repository": {
 		"url": "https://github.com/lllllllqw/vscode-jsdoc.git",
 		"type": "git"
@@ -12,24 +12,25 @@
 		"vscode": "^1.76.0"
 	},
 	"categories": [
-		"Extension Packs"
+		"Programming Languages",
+		"Snippets"
 	],
 	"main": "./dist/extension.js",
 	"l10n": "./l10n",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.genJSDoc",
-				"title": "gen jsdoc"
+				"command": "jsdoc.generateJSDoc",
+				"title": "Generate JSDoc"
 			},
 			{
-				"command": "extension.genJSDocV2",
-				"title": "gen jsdoc v2(not support yet))"
+				"command": "jsdoc.generateJSDocV2",
+				"title": "Generate JSDoc - v2(not support yet)"
 			}
 		],
 		"configuration": [
 			{
-				"title": "jsdoc",
+				"title": "JSDoc",
 				"properties": {
 					"jsdoc.Author": {
 						"type": "string",
@@ -55,8 +56,7 @@
 		"pretest": "pnpm run compile-tests && pnpm run compile && pnpm run lint",
 		"lint": "eslint src --ext ts",
 		"test:e2e": "node ./out/test/runTest.js",
-		"test:unit": "vitest",
-		"publish": "vsce publish"
+		"test:unit": "vitest"
 	},
 	"devDependencies": {
 		"@types/glob": "^8.1.0",

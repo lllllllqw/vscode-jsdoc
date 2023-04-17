@@ -1,4 +1,5 @@
 {
+  "jsdoc..description": "快速为函数创建 JSDoc 风格的注释",
   "jsdoc.Author.description": "生成 JSDoc 时将自动插入作者字段",
   "jsdoc.EnabledDate.description": "自动插入日期字段"
 }

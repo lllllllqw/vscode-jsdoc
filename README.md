@@ -1,10 +1,12 @@
 # jsdoc README
 
-gen jsdoc
+Quickly create JSDoc-style comments for functions.
 
 ## Features
 
-选中一个函数的参数, `ctrl+shift+p` 后输入 `gen jsdoc` 并选择 `gen jsdoc` 命令, 即可生成 jsdoc 风格的函数注释
+### Generate JSDoc
+
+Select all parameters of a function, input the `Generate JSDoc` command, , and JSDoc-style function comments will be generated.
 
 ## Requirements
 
@@ -14,7 +16,8 @@ none
 
 This extension contributes the following settings:
 
-- `jsdoc.author`: 添加此选项, jsdoc 将自动插入作者
+- `jsdoc.Author`: Automatically insert author field when generating JSDoc.
+- `jsdoc.EnabledDate`: Auto insert date field.
 
 ## Known Issues
 
@@ -26,13 +29,12 @@ none
 
 ### 1.0.0
 
-jsdoc 1.0 正式发布!
+jsdoc 1.0 released!
 
 ## Thanks
 
 - <https://github.com/oouo-diogo-perdigao/vscode-docthis/tree/master>
 
-## 待办
+## Roadmap
 
-- 国际化
-- 参数感知能力改为由语言服务器提供
+- The parameter awareness capability is now provided by the language server

@@ -4,11 +4,11 @@ import { genJSDocV2 } from './v2/main-v2';
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
-    'extension.genJSDoc',
+    'jsdoc.generateJSDoc',
     genJSDoc,
   );
   const disposableV2 = vscode.commands.registerCommand(
-    'extension.genJSDocV2',
+    'jsdoc.generateJSDocV2',
     genJSDocV2,
   );
 
