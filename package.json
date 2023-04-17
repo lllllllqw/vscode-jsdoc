@@ -3,7 +3,7 @@
 	"name": "jsdoc",
 	"displayName": "jsdoc",
 	"description": "%jsdoc.description%",
-	"version": "1.0.5",
+	"version": "1.0.7",
 	"repository": {
 		"url": "https://github.com/lllllllqw/vscode-jsdoc.git",
 		"type": "git"
