@@ -2,8 +2,8 @@
 	"publisher": "lllllllqw",
 	"name": "jsdoc",
 	"displayName": "jsdoc",
-	"description": "%jsdoc.description%",
-	"version": "1.0.7",
+	"description": "Quickly create JSDoc-style comments for functions.",
+	"version": "1.0.8",
 	"repository": {
 		"url": "https://github.com/lllllllqw/vscode-jsdoc.git",
 		"type": "git"
