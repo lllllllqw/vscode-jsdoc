@@ -28,6 +28,10 @@ none
 
 jsdoc 1.0 正式发布!
 
+## Thanks
+
+- <https://github.com/oouo-diogo-perdigao/vscode-docthis/tree/master>
+
 ## 待办
 
 - 国际化
