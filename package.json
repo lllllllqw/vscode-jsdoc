@@ -19,6 +19,7 @@
 		"onCommand:extension.genJSDocV2"
 	],
 	"main": "./dist/extension.js",
+	"l10n": "./l10n",
 	"contributes": {
 		"commands": [
 			{
@@ -27,17 +28,22 @@
 			},
 			{
 				"command": "extension.genJSDocV2",
-				"title": "gen jsdoc v2"
+				"title": "gen jsdoc v2(not support yet))"
 			}
 		],
 		"configuration": [
 			{
 				"title": "jsdoc",
 				"properties": {
-					"jsdoc.author": {
+					"jsdoc.Author": {
 						"type": "string",
 						"default": "",
-						"description": "添加此选项, jsdoc 将自动插入作者"
+						"description": "%jsdoc.Author.description%"
+					},
+					"jsdoc.EnabledDate": {
+						"type": "boolean",
+						"default": false,
+						"description": "%jsdoc.EnabledDate.description%"
 					}
 				}
 			}

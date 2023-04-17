@@ -12,8 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
     genJSDocV2,
   );
 
-  context.subscriptions.push(disposable);
-  context.subscriptions.push(disposableV2);
+  context.subscriptions.push(disposable, disposableV2);
 }
 
 export function deactivate() {}

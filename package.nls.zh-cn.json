@@ -1,0 +1,4 @@
+{
+  "jsdoc.Author.description": "生成 JSDoc 时将自动插入作者字段",
+  "jsdoc.EnabledDate.description": "自动插入日期字段"
+}

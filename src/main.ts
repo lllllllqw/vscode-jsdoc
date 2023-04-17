@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { getFormatDate } from './utils/date';
+import * as settings from './settings';
 
 export const genJSDoc = () => {
   const editor = vscode.window.activeTextEditor;
@@ -23,13 +24,13 @@ export const genJSDoc = () => {
     const selectionLine = editor.document.lineAt(selection.start.line);
     const insertPosition = selectionLine.range.start;
     let text = '/**\r';
-    text += `* 描述\r`;
+    text += `* ${vscode.l10n.t('Description')}\r`;
     // 作者
-    const configuration = vscode.workspace.getConfiguration('jsdoc');
-    const author: string = configuration.get('author') || '';
+    const author = settings.getAuthor();
     author && (text += `* @author ${author}\r`);
     // 日期
-    text += `* @date ${getFormatDate('YYYY-MM-DD',new Date())}\r`;
+    const dateEnabled = settings.getDateEnabled();
+    dateEnabled && (text += `* @date ${getFormatDate('YYYY-MM-DD',new Date())}\r`);
     // 参数
     text += paramList
       .map(paramName => `* @param {any} ${paramName}\r`)

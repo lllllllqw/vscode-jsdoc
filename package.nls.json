@@ -1,0 +1,4 @@
+{
+  "jsdoc.Author.description": "Automatically insert author field when generating JSDoc.",
+  "jsdoc.EnabledDate.description": "Auto insert date field."
+}
