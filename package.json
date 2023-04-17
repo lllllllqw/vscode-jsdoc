@@ -3,20 +3,16 @@
 	"name": "jsdoc",
 	"displayName": "jsdoc",
 	"description": "gen jsdoc template",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"repository": {
 		"url": "https://github.com/lllllllqw/vscode-jsdoc.git",
 		"type": "git"
 	},
 	"engines": {
-		"vscode": "^1.55.0"
+		"vscode": "^1.76.0"
 	},
 	"categories": [
 		"Extension Packs"
-	],
-	"activationEvents": [
-		"onCommand:extension.genJSDoc",
-		"onCommand:extension.genJSDocV2"
 	],
 	"main": "./dist/extension.js",
 	"l10n": "./l10n",
@@ -67,7 +63,7 @@
 		"@types/lodash-es": "^4.17.7",
 		"@types/mocha": "^10.0.1",
 		"@types/node": "16.x",
-		"@types/vscode": "^1.77.0",
+		"@types/vscode": "^1.76.0",
 		"@typescript-eslint/eslint-plugin": "^5.56.0",
 		"@typescript-eslint/parser": "^5.56.0",
 		"@vscode/test-electron": "^2.3.0",
@@ -81,8 +77,6 @@
 		"webpack-cli": "^5.0.1"
 	},
 	"dependencies": {
-		"lodash-es": "^4.17.21",
-		"vscode-languageserver": "^8.1.0",
-		"vscode-languageserver-protocol": "^3.17.3"
+		"lodash-es": "^4.17.21"
 	}
 }
