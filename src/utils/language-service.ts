@@ -24,6 +24,20 @@ export function getDocumentFileName(document: vscode.TextDocument) {
     : adjustedFileName;
 }
 
+export const isTypeScript = (): boolean => {
+  // TODO: ext name is not ts，like tsx or vue
+  const activeEditor = vscode.window.activeTextEditor;
+  if (!activeEditor) {
+    return false;
+  }
+  const textDocument = activeEditor.document;
+  const fileName = getDocumentFileName(textDocument);
+  if(fileName.endsWith('.ts')) {
+    return true;
+  }
+  return false;
+};
+
 export function fixWinPath(filePath: string) {
   if (path.sep === "\\") {
     return filePath.replace(/\\/g, "/");

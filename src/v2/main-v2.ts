@@ -1,7 +1,9 @@
 import * as ts from "typescript";
 import * as vscode from "vscode";
-import LanguageServiceHost from './language-service-host';
-import { getActiveNode, getDocumentFileName } from "../utils/language-service";
+import LanguageServiceHost from "./language-service-host";
+import { getActiveNode, isTypeScript } from "../utils/language-service";
+import { JSDocBuilder } from "../utils/jsdoc-builder";
+import { ParamBlock } from "../types";
 
 // const supportedNodeKinds = [
 //   ts.SyntaxKind.ClassDeclaration,
@@ -24,26 +26,44 @@ import { getActiveNode, getDocumentFileName } from "../utils/language-service";
 // ];
 
 const languageServiceHost = new LanguageServiceHost();
-const languageService = ts.createLanguageService(languageServiceHost, ts.createDocumentRegistry());
+const languageService = ts.createLanguageService(
+  languageServiceHost,
+  ts.createDocumentRegistry()
+);
 
 const genJSDocV2 = () => {
   const editor = vscode.window.activeTextEditor;
   if (!editor) {
     return;
   }
-
   const node = getActiveNode(languageServiceHost, languageService);
-
-  if(node) {
-    if(node.parameters[1].initializer?.kind === ts.SyntaxKind.NumericLiteral) {
-      console.log('第二个参数是数字');
-      
-    }
-    
+  if (!node) {
+    return;
   }
-  
+  const ignoreIdentifierType = isTypeScript();
+  let docStr = '';
+  if (ts.isFunctionDeclaration(node)) {
+    const bd = new JSDocBuilder();
+    bd.setOptions({
+      ignoreIdentifierType,
+    }).addBlock({
+      blockType: "description",
+      description: vscode.l10n.t("Description"),
+    });
+    const paramBlockList = node.parameters.map<ParamBlock>((p) => {
+      return {
+        blockType: "param",
+        name: p.name.getText(),
+        description: vscode.l10n.t("Description"),
+      };
+    });
+    paramBlockList.forEach((block) => {
+      bd.addBlock(block);
+    });
+    docStr = bd.build();
+  }
+
+  const position = ts.getLineAndCharacterOfPosition(node.getSourceFile(),node.getStart());
 };
 
-export {
-  genJSDocV2
-};
+export { genJSDocV2 };

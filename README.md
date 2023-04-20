@@ -37,4 +37,5 @@ jsdoc 1.0 released!
 
 ## Roadmap
 
-- The parameter awareness capability is now provided by the language server
+- 🚧 The parameter awareness capability is now provided by the language server
+- 💡 Update doc comment incrementally
